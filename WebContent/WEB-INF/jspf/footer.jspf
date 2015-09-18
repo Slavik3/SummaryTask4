@@ -1,0 +1,6 @@
+<%--=========================================================================== 
+Footer (bottom area). 
+===========================================================================--%> 
+<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container" align="center">	Hospital &copy; <y:CurrentYear/></div>
+</div>

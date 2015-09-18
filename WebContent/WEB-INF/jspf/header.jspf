@@ -1,0 +1,101 @@
+<%--=========================================================================== 
+Header (top area). 
+===========================================================================--%> 
+<script>
+    // very simple to use!
+    $(document).ready(function() {
+      $('.js-activated').dropdownHover().dropdown();
+    });
+</script>
+
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+<div align="center">  
+  <img src="${pageContext.request.contextPath}/img/header.jpg" width="100%" height="280"/> 
+</div>
+
+<!--  defines a set of navigation links -->
+<nav class="navbar navbar-inverse" >
+       
+<c:choose>
+<%--=========================================================================== 
+This is the user menu. 
+===========================================================================--%>       
+<%--=========================================================================== 
+This way we define the ADMIN MENU. 
+===========================================================================--%> 
+    <c:when test="${userRole.name == 'admin' }">      	
+      	<div class="navbar-collapse nav-collapse collapse navbar-header">      
+        	<ul class="nav navbar-nav">
+          		<li class="dropdown">
+            		<a href="controller?command=listDoctors" class="dropdown-toggle js-activated">
+            			<font size="4"><fmt:message key="header_jspf.anchor.doctors"/></font>
+            		</a>
+            		<ul class="dropdown-menu">
+              			<li>
+              				<a href="controller?command=listPediatricians"><fmt:message key="header_jspf.anchor.pediatrician"/></a>
+              			</li>
+              			<li><a href="controller?command=listTraumatologist"><fmt:message key="header_jspf.anchor.traumatologist"/></a></li>
+              			<li><a href="controller?command=listSurgeon"><fmt:message key="header_jspf.anchor.surgeon"/></a></li>
+            		</ul>
+          		</li>
+        	</ul>
+      	</div> <!-- .nav-collapse -->  
+      	<a class="navbar-brand" href="controller?command=listPatients"><fmt:message key="header_jspf.anchor.patients"/></a> 
+      	<a class="navbar-brand" href="controller?command=viewAddDoctor"><fmt:message key="header_jspf.anchor.add_doctor"/></a> 
+      	<a class="navbar-brand" href="controller?command=viewAddNurse"><fmt:message key="header_jspf.anchor.add_nurse"/></a> 
+      	<a class="navbar-brand" href="controller?command=viewAddPatient"><fmt:message key="header_jspf.anchor.add_patient"/></a> 									
+	</c:when>
+		
+<%--=========================================================================== 
+This way we define the DOCTOR MENU.
+===========================================================================--%> 
+	<c:when test="${userRole.name == 'doctor'}">
+		<a class="navbar-brand" href="controller?command=listPatientsDoctor"><fmt:message key="header_jspf.anchor.patients"/></a> 	
+		<a class="navbar-brand" href="controller?command=listCuredPatientsDoctor"><fmt:message key="header_jspf.anchor.cured_patients"/></a> 			
+	</c:when>
+	
+	<c:when test="${userRole.name == 'nurse'}">
+		<a class="navbar-brand" href="controller?command=listPatientsNurse"><fmt:message key="header_jspf.anchor.patients"/></a> 			
+	</c:when>
+			
+</c:choose>
+      
+	<div id="rightHeader" >        
+       <c:forEach var="localeName" items="${locales}">								
+			<a href="controller?command=updateSettings&localeToSet=${localeName}">
+					<c:if test="${localeName == 'ru'}" >							
+							<img src="${pageContext.request.contextPath}/img/RussianFlag.jpg" width="60" height="30"> 
+					</c:if>
+					<c:if test="${localeName == 'en'}" >							
+							<img src="${pageContext.request.contextPath}/img/USAFlag.jpg" width="60" height="30"> 
+					</c:if>
+			</a>
+			&nbsp; &nbsp;
+		</c:forEach>                  
+ 
+<%--=========================================================================== 
+This way we define the menu located at the right of header. 
+===========================================================================--%>   
+     
+<%--=========================================================================== 
+Type user name if the user object is presented in the current session.  
+===========================================================================--%> 
+		<c:out value="${user.firstName} ${user.lastName}" />
+	
+<%--=========================================================================== 
+Type user role name if the user object is presented in the current session.  
+===========================================================================--%> 
+		<c:if test="${not empty userRole}">
+			<c:out value="(${userRole.name})"/>
+		</c:if>  	
+      
+<%--=========================================================================== 
+Type link to logout  
+===========================================================================--%>              
+      	<a href="controller?command=logout"><span class="glyphicon glyphicon-log-in"></span>      	
+        	<fmt:message key="header_jspf.anchor.logout"/>
+      	</a>               
+    </div>      		
+</nav> 	

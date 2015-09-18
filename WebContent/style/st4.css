@@ -1,0 +1,134 @@
+/***************************************************************
+CSS for all JSP pages
+***************************************************************/
+
+td {
+	border:1px solid black;
+	padding: 2px;
+}
+
+
+#fnf {
+	margin-top: -20;
+}
+
+
+#header, #footer {
+	border: 0px solid;	
+}
+
+label {
+    float:left;
+    margin-right:15px;
+    margin-left: 50;
+    font-size: 120%;
+    display:block;
+}
+
+#inputUser {
+	max-width: 430px;
+/* margin-left: 650;*/
+	align: center;
+}
+
+
+
+
+/***************************************************************
+Style for the right located head menu (DIV tag at right)
+***************************************************************/
+#rightHeader {
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	padding: 2px;
+	color: white;
+	padding-top: 10;
+}
+
+/***************************************************************
+Content styles (TD tag in the main middle row)
+***************************************************************/
+
+
+
+
+/***************************************************************
+Style for the ERROR message
+***************************************************************/
+.error {
+	font-size: large;
+	color: rgb(204, 0, 0);
+}
+
+/***************************************************************
+Miscellaneous
+***************************************************************/
+.center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+
+/***************************************************************
+Login form (login.jsp)
+***************************************************************/
+#login_form > fieldset {
+	display: inline;
+}
+
+#login_form > input[type=submit] {
+	margin-top: 5px;
+}
+
+/***************************************************************
+Settings form (settings.jsp)
+***************************************************************/
+#settings_form > div > p {
+	font-size: 17px;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+
+#settings_form > input[type=submit] {
+	margin-top: 10px;
+}
+
+.error{
+border: 1px solid red;
+}
+
+ .myLabel {  
+    position: relative; 
+   line-height:0.5;
+    left: -160px; 
+  }
+  
+   .myInput {  
+    position: relative; 
+    top: -20px;
+    left: 60px; 
+  }
+  
+ .errorMsg {
+color: white; 
+font-size: 20; 
+font-family: cursive; 
+border: 1px solid #434343; 
+padding: 10px; 
+background: red; 
+-moz-border-radius: 10px; 
+-webkit-border-radius: 10px;
+ }
+ 
+ .successMsg{
+  color: white; 
+ font-size: 20; 
+ font-family: cursive; 
+ border: 1px solid #434343; 
+ padding: 10px;  
+ background: #00FF00; 
+ -moz-border-radius: 10px; 
+ -webkit-border-radius: 10px;
+ }

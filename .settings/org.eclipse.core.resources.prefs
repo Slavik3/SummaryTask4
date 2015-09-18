@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/jsp/admin/addDoctor.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/admin/listDoctors.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/admin/listDoctorsForAssignment.jsp=UTF-8
+encoding//WebContent/WEB-INF/jspf/header.jspf=UTF-8
+encoding//WebContent/login.jsp=UTF-8

@@ -22,7 +22,7 @@ public class ViewAddPatientCommand extends Command {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 		LOG.debug("ViewAddDoctorCommand start");
-		LOG.debug("ViewAddDoctorCommand finished.");
+		LOG.debug("ViewAddDoctorCommand finished");
 		return "/WEB-INF/jsp/admin/addPatient.jsp";
 	}
 
